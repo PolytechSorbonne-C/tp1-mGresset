@@ -1,0 +1,24 @@
+/* Calcul de puissance */
+/* 1) */
+
+#include <stdio.h>
+
+int main()
+{
+  int x;
+  int k;
+
+  printf("saisir le nombre : ");
+  scanf("%d",&x);
+  printf("saisir la puissance : ");
+  scanf("%d",&k);
+
+  int x_puiss_k = x;
+
+  for(int i=2;i<=k;i=i+1){
+    x_puiss_k = x_puiss_k * x;
+  }
+  /* on multiplie k par lui même k fois afin d'avoir x^k */
+
+  printf("%d",x_puiss_k);
+}

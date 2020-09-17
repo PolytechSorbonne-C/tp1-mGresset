@@ -1,0 +1,59 @@
+/* équation de determaination si un pts est dans le cercle de r=1 centré en (0,0) :
+sqrt(x²+y²) <= 1   */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main()
+{
+
+  int p = 0; /*nbre de pts dans le cercle*/
+  int n = 50000; /* nbre de tirage*/
+  float pi;
+
+  srand(time(NULL));
+  /* permet de ne donner le nbr de seconde écoulée depuis le 1/1/70. Le srand permet de determiner la première valeur de la suite aléatoire*/
+
+  for(int i=0;i<=n;i=i+1){
+
+    float x = rand();
+    /*donne un nbr aléatoire entre o et RAND_MAX*/
+    float y = rand();
+ 
+
+    x = 2 * x/(float)RAND_MAX; 
+    /*remet x et y entre 0 et 2*/
+    y = 2 * y/(float)RAND_MAX;
+
+    x = x-1; 
+    /*remet x et y entre -1 et 1*/
+    y = y-1;
+
+
+    /*printf("x = ");
+    printf("%f",x);
+    printf("\n");
+    printf("y = ");
+    printf("%f",y);*/
+    /*permet de visualiser les valeurs de x et y pour construire le programme*/
+
+
+  
+    if(x*x + y*y <= 1){
+      p = p + 1;
+    }
+    /*test si le point (x,y) est dans le cercle de rayon 1 centré en (0,0)*/
+  }
+  pi = 4 * (float)p/(float)n;
+  /* sur un grand nombre de test n, pi = 4 * p / n  */
+
+  printf("p = ");
+  printf("%d", p);
+  printf(" \n");
+  printf("n = ");
+  printf("%d", n);
+  printf(" \n");
+  printf("pi = ");
+  printf("%f",pi);
+}  

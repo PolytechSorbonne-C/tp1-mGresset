@@ -1,0 +1,41 @@
+/* Calcul de puissance */
+/* 2) */
+
+#include <stdio.h>
+
+int main()
+{
+  int x;
+  int k;
+  
+
+  printf("saisir le nombre : ");
+  scanf("%d",&x);
+  printf("saisir la puissance : ");
+  scanf("%d",&k);
+
+  int q = k / 2; /*quotient de k / 2 */
+  int r = k % 2; /* reste de k / 2 */
+  /* si le reste vaut 1, la puissance est impaire */
+  
+  int x_carre = x*x;
+
+  int x_puiss_k = x*x;
+
+  for(int i=2;i<=q;i=i+1){
+    x_puiss_k = x_puiss_k * x_carre;
+  }
+
+  /* on multiplie k² par lui même q fois afin d'avoir (k²)^q */
+
+  if(r == 1){
+    x_puiss_k = x * x_puiss_k;
+  }
+  /* Si la puissance etait impaire, on remultiplie par x afin de retomber sur la puissance voulu */
+
+  printf("%d",x_puiss_k);
+}
+
+/* Dans le cas d'un calcul de x^18, on faisait 17 tours de boucle avec puiss1.c. Avec puiss2.c, on ne réalise que 8 tours de boucle. */
+
+/* En règle général, on réalise k-1 tours de boucle avec la première version. Avec la deuxième, on réalise (k/2)-1 tours si k est pair, et (k/2)-1 tours + 1 multiplication si k est impaire. */

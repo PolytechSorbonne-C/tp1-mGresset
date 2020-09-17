@@ -1,0 +1,38 @@
+/* Calcul de puissance */
+/* 2) */
+/* deuxièeme version de cet exercice, en essayant de correspondre plus à l'énoncé. */
+
+#include <stdio.h>
+
+int main()
+{
+  int x;
+  int k;
+  
+
+  printf("saisir le nombre : ");
+  scanf("%d",&x);
+  printf("saisir la puissance : ");
+  scanf("%d",&k);
+
+  int a = 1;
+
+  int x_puiss_k = x;
+
+  while(k-a>=a){
+    x_puiss_k=x_puiss_k*x_puiss_k;
+    a=2*a;
+  }
+  /*on multiplie les puissances de x entres elles tant qu'on peut*/
+
+while(a<k){
+  x_puiss_k=x_puiss_k*x;
+  a=a+1;
+}
+/*on ajoute le nombre de x manquant*/
+
+  
+ 
+
+  printf("%d",x_puiss_k);
+}

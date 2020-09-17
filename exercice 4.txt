@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+  int long_char = 10000;
+  int nbr_decimal;
+  char symb_hexa[] = "0123456789ABCDEF"; /*chaine contenant les caractère hexa pour la recherche*/
+
+  char nbr_hexa[long_char];
+
+  scanf("%s",nbr_hexa);
+
+  long_char=strlen(nbr_hexa); /*calcule de la longueur de la chaine rentrée*/
+
+  printf("%s", nbr_hexa);
+
+  int i = long_char;
+
+  while(strchr(symb_hexa, nbr_hexa[i]) != NULL && i>=0){
+    
+    i = i-1;
+  }
+  /* but : si le caractère lu est dans la chaine, on reagrde sa valeur décimal et on vient ajouter la puissance de 16 au nombre de sortie*/
+
+}
