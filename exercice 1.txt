@@ -2,22 +2,24 @@
 
 int main()
 {
-  int saisi;
+  int saisi = 1;
+  int trois;
+  int sept;
 
-  printf("Saisir un nombre : ");
-
-  int trois = saisi - 3; 
+  for(saisi; saisi<=100;saisi=saisi+1){
+  
+  trois = saisi - 3; 
   /*permet de voir si il se fini par 3 reste de la division de ce nombre par 10*/
 
-  int sept = saisi - 7; 
+  sept = saisi - 7; 
   /*permet de voir si il se fini par 7 par le reste de la division de ce nombre par 10*/
-
-  scanf("%d",&saisi);
 
   if (saisi % 3 == 0 || trois % 10 ==0) printf("Fizz");
   if (saisi % 7 == 0 || sept % 10 ==0) printf("Buzz");
 
   if (saisi % 7 != 0 && sept % 10 !=0 && saisi % 3 != 0 && trois % 10 != 0) printf("%d", saisi);
+  printf(" ");
+  }
 
   return 0;
 }
